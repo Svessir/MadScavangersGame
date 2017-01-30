@@ -17,6 +17,9 @@ public class ScavangerController: NetworkBehaviour
     [SerializeField]
     private Vector3 cameraOffset;
 
+    [SerializeField]
+    private ScavangerHealthManager healthManager;
+
     private Animator animator;
 
     private Vector3 aimDirection;
@@ -56,7 +59,6 @@ public class ScavangerController: NetworkBehaviour
             aimDirection = (hit.point - transform.position);
             aimDirection.Scale(new Vector3(1, 0, 1));
             Debug.DrawRay(transform.position, hit.point - transform.position, Color.red);
-            Debug.Log(hit.collider.gameObject.tag);
             transform.forward = aimDirection.normalized;
         }
 
@@ -64,13 +66,10 @@ public class ScavangerController: NetworkBehaviour
         Debug.DrawRay(transform.position, direction, Color.blue);
         characterController.Move(direction * speed * Time.deltaTime);
         animator.SetFloat("Speed", (direction * speed).magnitude);
-        Debug.Log((direction * speed).magnitude);
 
         float angle = Vector3.Angle(direction, aimDirection);
         Vector3 cross = Vector3.Cross(direction, aimDirection);
         angle *= cross.y < 0 ? -1 : 1;
-        //Debug.Log(cross);
-        //Debug.Log(angle);
         animator.SetFloat("Angle", angle);
     }
 }
