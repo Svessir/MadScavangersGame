@@ -14,8 +14,10 @@ public class ScavangerController: NetworkBehaviour
     [SerializeField]
     private LayerMask mask;
 
+    [SyncVar]
     [SerializeField]
     private Vector3 cameraOffset;
+    public Vector3 CameraOffset { get { return cameraOffset; } set { cameraOffset = value; } }
 
     [SerializeField]
     private ScavangerHealthManager healthManager;

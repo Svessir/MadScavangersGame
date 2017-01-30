@@ -23,6 +23,9 @@ public class ScavangerFireScript : NetworkBehaviour {
     [SerializeField]
     private ParticleSystem muzzleFlash;
 
+    [SerializeField]
+    private AudioSource shotgunSound;
+
     float timeUntilNextShot;
 
 	// Use this for initialization
@@ -59,5 +62,6 @@ public class ScavangerFireScript : NetworkBehaviour {
     private void RpcPlayMuzzleFlash()
     {
         muzzleFlash.Play();
+        shotgunSound.Play();
     }
 }

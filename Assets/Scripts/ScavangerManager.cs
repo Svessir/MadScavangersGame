@@ -17,6 +17,9 @@ public class ScavangerManager : NetworkBehaviour
     [SerializeField]
     int numberOfSeconds = 5;
 
+    public delegate void DeathAction();
+    public event DeathAction OnDeath1;
+
     RespawnManager respawnManager;
 
     // Use this for initialization

@@ -465,6 +465,7 @@ GameObject:
   - component: {fileID: 114585703450072718}
   - component: {fileID: 114620942299444236}
   - component: {fileID: 114341758093320526}
+  - component: {fileID: 81285892907367440}
   m_Layer: 0
   m_Name: Scavanger
   m_TagString: Scavanger
@@ -722,6 +723,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4045578560718758}
+  - component: {fileID: 82270324702855270}
   m_Layer: 0
   m_Name: GunBarrel
   m_TagString: Untagged
@@ -2122,6 +2124,141 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1804195161537398}
   m_Mesh: {fileID: 4300000, guid: deb3b1c1bdb5be64e8939b70399dcb83, type: 3}
+--- !u!81 &81285892907367440
+AudioListener:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1383804787732082}
+  m_Enabled: 0
+--- !u!82 &82270324702855270
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1638748683424100}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 8cbdc07e54df2c84b87022f91bc72e7e, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 1
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0.002
+      value: 1
+      inSlope: -500.20065
+      outSlope: -500.20065
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.004
+      value: 0.5
+      inSlope: -125.05016
+      outSlope: -125.05016
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.016
+      value: 0.125
+      inSlope: -7.815635
+      outSlope: -7.815635
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.032
+      value: 0.0625
+      inSlope: -1.9539088
+      outSlope: -1.9539088
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.064
+      value: 0.03125
+      inSlope: -0.4884772
+      outSlope: -0.4884772
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.128
+      value: 0.015625
+      inSlope: -0.1221193
+      outSlope: -0.1221193
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.256
+      value: 0.0078125
+      inSlope: -0.030529825
+      outSlope: -0.030529825
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.512
+      value: 0.00390625
+      inSlope: -0.0076324563
+      outSlope: -0.0076324563
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.9462023
+      value: 0.3
+      inSlope: -31.26254
+      outSlope: -31.26254
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0.002
+      inSlope: -0.002000801
+      outSlope: -0.002000801
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0.38333333
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!95 &95957484843719142
 Animator:
   serializedVersion: 3
@@ -2227,6 +2364,7 @@ MonoBehaviour:
   numberOfPallets: 30
   healthManager: {fileID: 114585703450072718}
   muzzleFlash: {fileID: 198467137807125728}
+  shotgunSound: {fileID: 82270324702855270}
 --- !u!114 &114341758093320526
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2281,7 +2419,7 @@ MonoBehaviour:
   mask:
     serializedVersion: 2
     m_Bits: 256
-  cameraOffset: {x: -8, y: 8, z: -8}
+  cameraOffset: {x: -10, y: 12, z: -10}
   healthManager: {fileID: 114585703450072718}
 --- !u!137 &137769500229443064
 SkinnedMeshRenderer:
@@ -2463,7 +2601,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 653575773
+  randomSeed: 1024834239
   InitialModule:
     serializedVersion: 3
     enabled: 1
