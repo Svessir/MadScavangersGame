@@ -52,6 +52,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4442180889875066}
   - component: {fileID: 114299239680463828}
+  - component: {fileID: 136956569948337496}
+  - component: {fileID: 65426879675765138}
   m_Layer: 0
   m_Name: retro_rocket
   m_TagString: Untagged
@@ -295,7 +297,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1236750443457946}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -2.39, y: 2.11, z: -18.35}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4681499267559724}
@@ -669,6 +671,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1019098153680002}
   m_Mesh: {fileID: 4300000, guid: 5baeb9ddb277ad04ab85d4c0eb8f5413, type: 3}
+--- !u!65 &65426879675765138
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1236750443457946}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3, y: 5, z: 3}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &114299239680463828
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -680,3 +694,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b19808de2962894181bd351850d5a17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  numberOfEnergyCells: 2
+  maxNumberOfEnergyCells: 0
+  energyCellPrefab: {fileID: 1310877291639756, guid: 1b376dbae67947d4783d719530db7af1,
+    type: 2}
+  tools: {fileID: 0}
+--- !u!136 &136956569948337496
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1236750443457946}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 1
+  m_Height: 5
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}

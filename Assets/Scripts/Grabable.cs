@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 
+public delegate void DropAction();
+public delegate void GrabAction();
+
 public class Grabable : NetworkBehaviour {
 
     [SerializeField]
@@ -10,6 +13,9 @@ public class Grabable : NetworkBehaviour {
     private Vector3 initialPosition;
     
     private GameObject grabber;
+
+    public event GrabAction GrabEvent;
+    public event DropAction DropEvent;
 	
     // Use this for initialization
 	void Start () {
@@ -27,11 +33,17 @@ public class Grabable : NetworkBehaviour {
     public void Grab(GameObject theGrabber)
     {
         grabber = theGrabber;
+
+        if (GrabEvent != null)
+            GrabEvent();
     }
 
     public void Drop()
     {
         grabber = null;
         transform.position = initialPosition;
+
+        if (DropEvent != null)
+            DropEvent();
     }
 }

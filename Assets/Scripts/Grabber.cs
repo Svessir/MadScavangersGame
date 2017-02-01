@@ -53,4 +53,23 @@ public class Grabber : NetworkBehaviour
             grabableObject = null;
         }
     }
+
+    public Grabable GetGrabbedObject()
+    {
+        return grabableObject;
+    }
+
+    public Grabable Swap(Grabable grabable)
+    {
+        Grabable grab = grabableObject;
+        grabableObject = grabable;
+
+        if (grabable != null)
+            grabable.Grab(gameObject);
+
+        if (grab != null)
+            grab.Drop();
+
+        return grab;
+    }
 }
